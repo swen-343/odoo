@@ -26,7 +26,7 @@ class TestCreateIssue(TransactionCase):
             self.testIssue = self.issue.create({'kanban_state': 'normal'})
 
     #Test to show you can get partner email from issue
-    def testEditIssue(self):
+    def testGetIssueEmail(self):
         self.testIssue = self.issue.create({'name':'testIssue1', 'kanban_state': 'normal', 'email_from': 'test@email.com'})
         self.assertEquals(self.testIssue.onchange_partner_id(1)['value']['email_from'], 'info@yourcompany.example.com')
 
